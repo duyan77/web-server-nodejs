@@ -19,13 +19,8 @@
 
 // ==============================================
 const express = require("express");
-const vhost = require("vhost");
 const path = require("path");
 const servers = require("./serverConfig.json").servers;
-
-const app = express();
-
-// Cho phép truy cập qua địa chỉ IP
 
 servers.forEach((server) => {
   const site = express();
@@ -41,8 +36,3 @@ servers.forEach((server) => {
     );
   });
 });
-
-// Sử dụng express.static để phục vụ các tệp tĩnh từ thư mục public
-// app.use(express.static(path.join(__dirname, "public")));
-
-// app.use("/", site1); // Mặc định truy cập site1 qua địa chỉ IP
