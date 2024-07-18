@@ -16,17 +16,17 @@
 // app.listen(port, () => {
 //   console.log(`Server is running at http://localhost:${port}`);
 // });
+// const path = require("path");
 
 // ==============================================
 const express = require("express");
-const path = require("path");
-const servers = require("./serverConfig.json").servers;
+const servers = require("./servers.json").servers;
 
 servers.forEach((server) => {
   const site = express();
 
   site.get("/", (req, res) => {
-    res.send(`Welcome to ${server.name}`);
+    res.send(`Hello from ${server.name}`);
   });
 
   // Lắng nghe trên cổng tương ứng với từng site
