@@ -1,0 +1,654 @@
+/*----------------------------------- reset css --------------------------------------------*/
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+button {
+  cursor: pointer;
+  background-color: transparent;
+  outline: none;
+  border: 0;
+}
+body {
+  min-height: 100vh;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1;
+}
+/* --------------------------------------------------------------------------------- */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap");
+
+html {
+  scroll-behavior: smooth;
+  font-size: 62.5%;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  background: #1a0327;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+header {
+  width: 100%;
+  height: 10vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-left,
+.nav-right {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  position: relative;
+  list-style: none;
+  text-decoration: none;
+  color: #550381;
+}
+.nav-left {
+  width: 60%;
+  justify-content: start;
+}
+.nav-right {
+  justify-content: end;
+  width: 40%;
+  padding: 0 10px;
+}
+.nav-right > * {
+  margin-right: 8px;
+  font-size: 13px;
+  padding: 0.5rem;
+}
+.logo {
+  width: 300px;
+  height: 10vh;
+  background: #550381;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  padding: 5px;
+  line-height: 2rem;
+  clip-path: polygon(0 0, 90% 0, 100% 100%, 0% 100%);
+}
+.logo a {
+  text-decoration: none;
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+.logo p {
+  width: 130px;
+  margin-left: 10px;
+  font-size: 20px;
+}
+.logo .fas {
+  font-size: 50px;
+}
+.search-box {
+  overflow-x: hidden;
+}
+.search__input {
+  border-radius: 5px;
+}
+.search__btn {
+  cursor: pointer;
+  padding: 2px;
+}
+.navbar-list {
+  display: flex;
+  list-style: none;
+}
+.navbar-list__item {
+  justify-content: space-between;
+}
+.navbar-list__item > a {
+  text-decoration: none;
+  text-transform: uppercase;
+  display: block;
+  padding: 2rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #fff;
+  position: relative;
+}
+.navbar-list__item > a:hover {
+  color: #fec53a;
+  transition: color 0.25s linear;
+}
+.navbar-list__item > a::after {
+  content: "";
+  position: absolute;
+  bottom: 1.5rem;
+  left: 2rem;
+  width: 0;
+  height: 3px;
+  background-color: #fec53a;
+  transition: line;
+  transition: width 0.3s linear;
+}
+.navbar-list__item > a:hover:after {
+  width: calc(100% - 4rem);
+}
+.bell {
+  display: block;
+  text-align: center;
+  position: relative;
+  text-align: right;
+  color: #fff;
+  position: relative;
+}
+.bell:hover i {
+  font-weight: bold;
+  color: #f3c756;
+  text-shadow: 0 0 10px #fec53a;
+  animation: ring 0.3s linear;
+}
+@keyframes ring {
+  25% {
+    rotate: 20deg;
+  }
+  75% {
+    rotate: -40deg;
+  }
+  100% {
+    rotate: 20deg;
+  }
+}
+.account {
+  display: flex;
+  text-decoration: none;
+  text-align: right;
+  color: #fff;
+  position: relative;
+}
+.account * {
+  margin: 0 3px;
+  transition: all 0.1s ease;
+}
+.account:hover > span {
+  color: #fec53a;
+  text-shadow: 0 0 10px #fec53a;
+}
+.search__btn {
+  color: white;
+}
+.to-top {
+  background: #fec53a;
+  position: fixed;
+  bottom: 16px;
+  right: 30px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  color: #1f1f1f;
+  text-decoration: none;
+  z-index: 2;
+}
+.slider {
+  width: 1250px;
+  max-width: 100vw;
+  height: calc(100vh - 30px);
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+}
+.slide-list {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  display: flex;
+  width: max-content;
+  transition: all 0.75s linear;
+}
+.slide-item img {
+  width: 1250px;
+  max-width: 100vw;
+  height: 100%;
+  object-fit: cover;
+  object-position: 0 -40px;
+}
+.slide-buttons {
+  position: absolute;
+  top: 45%;
+  left: 5%;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+}
+.slide-buttons button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #fff5;
+  border: none;
+  font-family: monospace;
+  font-weight: bold;
+}
+.dots {
+  position: absolute;
+  bottom: 10px;
+  color: #fff;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.dots li {
+  list-style: none;
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  margin: 2rem;
+  border-radius: 2rem;
+  transition: all 0.75s linear;
+}
+.dots li.active {
+  width: 30px;
+}
+.game-list {
+  padding: 0 100px;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  background: url(./images/section-wrapper-bg.png);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: auto;
+}
+.h2 {
+  font-size: 3.6rem;
+  color: #fff;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+}
+.section-title .span {
+  display: inline-block;
+  margin: 20px 0;
+  color: #fec53a;
+}
+.game-list h2 {
+  color: #fff;
+  margin: 10px 0;
+  font-weight: 700;
+}
+.game-list ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.game-list ul li {
+  list-style: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin: 5px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  color: #fff;
+  border: #500c77 solid 1px;
+  background-color: #554747;
+}
+.game-list ul li.click {
+  background-color: #fec53a;
+  color: #35407e;
+  box-shadow: 0 0 5px #fec53a;
+}
+.game-list .card-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  min-width: 100%;
+}
+.game-list .card-box .card {
+  width: 280px;
+  border-radius: 10px;
+  margin: 20px;
+  background-color: #312727;
+  overflow: hidden;
+}
+.game-list .card-box .card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+.game-list .card-box .card .content {
+  padding: 10px;
+  font-weight: 600;
+}
+.game-list .card-box .card .content h4 {
+  color: #fff;
+  margin: 15px 0;
+}
+.game-list .card-box .card .progress-line {
+  position: relative;
+  height: 10px;
+  width: 100%;
+  background-color: #35407e;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: animate 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+}
+.game-list .card-box .card .progress-line span {
+  position: absolute;
+  height: 100%;
+  width: 80%;
+  border-radius: 10px;
+  background-color: #fec53a;
+  box-shadow: 0 0 10px #fec53a;
+  transform-origin: left;
+  transform: scaleX(1);
+}
+@keyframes animate {
+  100% {
+    transform: scaleX(1);
+  }
+}
+.game-list .card-box .card .info {
+  border-top: 2px solid #35407e;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.game-list .card-box .card .info p {
+  font-size: 1em;
+  color: #fff;
+  line-height: 2rem;
+}
+.game-list .card-box .card .info p span {
+  color: #35407e;
+  font-weight: 600;
+}
+.game-list .card-box .card .info a {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 20px 0;
+  border: 1px solid #35407e;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 5px;
+  color: #fff;
+  letter-spacing: 1px;
+}
+.game-list .card-box .card .info a:hover {
+  background-color: #fec53a;
+  border: none;
+  color: #35407e;
+  box-shadow: 0 0 10px #fec53a;
+  animation: all 0.25s linear;
+}
+
+/* feedback */
+.section-3 {
+  width: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(./images/controller.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+.section-3 h1 {
+  font-size: 3rem;
+  color: #fff;
+  text-align: center;
+  font-weight: 700;
+  padding-top: 2rem;
+}
+
+.section-3-wrapper {
+  display: flex;
+  min-height: 70vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.feedback {
+  width: 250px;
+  height: 300px;
+  background: url(./images/feedback.jpg);
+  background-position: center;
+  background-size: cover;
+}
+.feedback-desc {
+  width: 300px;
+  height: 300px;
+  background: rgba(0, 0, 0, 0.767);
+  padding: 10px;
+  color: #fff;
+  margin-right: 10px;
+}
+.feedback-desc p {
+  font-size: 16px;
+  word-spacing: 3px;
+  line-height: 3rem;
+}
+.feedback-desc .far {
+  color: #fec53a;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+.f-img-2 {
+  background: url(./images/image9.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+/* Footer section */
+footer {
+  width: 100%;
+  height: 55vh;
+  background: #282828;
+  display: flex;
+  align-items: center;
+}
+.footer-body {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+}
+.footer-logo {
+  height: 12vh;
+  background-color: #fec53a;
+  color: #000;
+  line-height: 1.7rem;
+}
+.footer-body h1 {
+  padding: 10px;
+  font-weight: 700;
+}
+ul h3 {
+  color: #fff;
+  font-weight: 450;
+}
+ul li {
+  list-style: none;
+  line-height: 2.5rem;
+}
+ul li a {
+  text-decoration: none;
+  color: #fff;
+}
+ul li a .fab {
+  font-size: 1.2rem;
+  color: #fec53a;
+  margin-right: 15px;
+}
+ul li a:hover {
+  color: #fec53a;
+}
+.footer-bottom {
+  width: 100%;
+  height: 7vh;
+  background: #1b1919;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+/* result box css */
+.result-box {
+  position: absolute;
+  z-index: 99;
+  background-color: #f3f3f3;
+  width: 100%;
+}
+.result-box li {
+  list-style: none;
+  color: black;
+  cursor: pointer;
+  padding: 5px;
+}
+.result-box li:hover {
+  background-color: lightgray;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  header {
+    padding: 15px 40px;
+    padding-left: 0;
+  }
+  header .navbar-list {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(40, 40, 40, 0.9);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 99;
+  }
+  header .navbar-list.active {
+    display: flex;
+  }
+  header .navbar-list li {
+    margin: 20px 0;
+  }
+  header .navbar-list li a {
+    font-size: 24px;
+    margin: 10px;
+  }
+  .toggleMenu {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: url(https://i.pinimg.com/originals/26/9d/d1/269dd16fa1f5ff51accd09e7e1602267.png);
+    background-position: center;
+    background-size: 30px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    z-index: 1000;
+  }
+  .toggleMenu.active {
+    background: url(https://www.citypng.com/public/uploads/preview/png-close-x-logo-white-icon-31631914840uc9joqwssz.png);
+    background-position: center;
+    background-size: 30px;
+    background-repeat: no-repeat;
+  }
+  .nav-left {
+    width: 25%;
+    justify-content: start;
+  }
+  .logo {
+    background: none;
+  }
+  .logo p {
+    display: none;
+  }
+  .nav-right {
+    width: 80%;
+  }
+  .user-picture + span {
+    display: none;
+  }
+  .search-box {
+    display: none;
+  }
+  .slide-item img {
+    object-position: center;
+  }
+  .game-list h2 {
+    text-align: center;
+  }
+  .game-list .card-box {
+    width: 100vw;
+  }
+  .game-list .card-box .card {
+    width: 100%;
+    margin: 20px 0;
+  }
+  .game-list .card-box .card .info p {
+    display: none;
+  }
+  .game-list .card-box .card .info a {
+    display: flex;
+    margin: auto;
+  }
+  .section-3 h1 {
+    padding: 3rem 0;
+  }
+  .section-3-wrapper {
+    flex-direction: column;
+  }
+  .section-3-wrapper .feedback,
+  .feedback-desc {
+    width: 100%;
+  }
+  footer {
+    height: max-content;
+  }
+  .footer-body {
+    margin: 5rem 0;
+    flex-direction: column;
+  }
+  .footer-logo {
+    display: none;
+  }
+  .footer-body > ul {
+    padding: 2rem;
+    text-align: center;
+  }
+}

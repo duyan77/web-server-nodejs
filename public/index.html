@@ -1,25 +1,343 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>My Web Page</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        background-color: #b8acac;
-      }
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="shortcut icon" href="./images/logo.avif" />
 
-      h1 {
-        color: #5fb850;
-        text-align: center;
-      }
-
-      p {
-        color: #666;
-        text-align: center;
-      }
-    </style>
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>The Game Zone</title>
   </head>
   <body>
-    <h1>Gửi chó duy</h1>
+    <div class="home">
+      <header>
+        <div class="nav-left">
+          <div class="logo">
+            <a href="#"
+              ><i class="fas fa-gamepad"></i>
+              <p>The Game Zone</p>
+            </a>
+          </div>
+          <ul class="navbar-list">
+            <li class="navbar-list__item"><a href="#">Home</a></li>
+            <li class="navbar-list__item"><a href="#game-part">Games</a></li>
+            <li class="navbar-list__item">
+              <a href="./cart_and_checkout-main/cart.html" target="_blank"
+                >Shop</a
+              >
+            </li>
+            <li class="navbar-list__item">
+              <a href="#FeedBacks-part">FeedBacks</a>
+            </li>
+            <li class="navbar-list__item">
+              <a href="#contact-part">Contact</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="nav-right">
+          <a href="./sign-in.html" target="_blank" class="account">
+            <div class="user-picture">
+              <i class="fa-solid fa-user"></i>
+            </div>
+            <span>Sign in</span>
+          </a>
+          <a href="#" class="bell">
+            <i class="fa-solid fa-bell"></i>
+          </a>
+
+          <div class="search-box">
+            <div search__input>
+              <input
+                type="search"
+                name="search-box"
+                id="search-box"
+                placeholder="Search games..."
+              />
+              <button class="search__btn">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+              <div class="result-box"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- to top button -->
+        <div>
+          <a href="#" class="to-top">
+            <i class="fa-solid fa-chevron-up"></i>
+          </a>
+        </div>
+        <!-- Toggle Menu -->
+        <div class="toggleMenu" onclick="toggleMenu()"></div>
+      </header>
+
+      <!-- Slider -->
+      <div class="slider">
+        <div class="slide-list">
+          <div class="slide-item">
+            <img src="./images/wras.jpg" alt="image" />
+          </div>
+          <div class="slide-item">
+            <img src="./images/battle.jpg" alt="image" />
+          </div>
+          <div class="slide-item">
+            <img src="./images/Anpar.jpg" alt="image" />
+          </div>
+          <div class="slide-item">
+            <img src="./images/slider_img_6.jpg" alt="image" />
+          </div>
+          <div class="slide-item">
+            <img src="./images/warxone.jpg" alt="image" />
+          </div>
+        </div>
+
+        <div class="slide-buttons">
+          <button id="pre"><</button>
+          <button id="next">></button>
+        </div>
+
+        <ul class="dots">
+          <button>
+            <li class="active"></li>
+          </button>
+          <button>
+            <li></li>
+          </button>
+          <button>
+            <li></li>
+          </button>
+          <button>
+            <li></li>
+          </button>
+          <button>
+            <li></li>
+          </button>
+        </ul>
+      </div>
+    </div>
+
+    <section class="game-list" id="game-part">
+      <h2 class="h2 section-title">
+        top popular <span class="span">games</span>
+      </h2>
+      <ul>
+        <li class="game-list__item click" data-filter="all">All</li>
+        <li class="game-list__item" data-filter="single">Single</li>
+        <li class="game-list__item" data-filter="multiple">Multiple</li>
+      </ul>
+
+      <!-- Dinosour game -->
+      <div class="card-box">
+        <div class="card" data-item="single">
+          <img
+            src="https://cdn.the-scientist.com/assets/articleNo/70203/aImg/46696/m-gigas-article-o.jpg"
+            alt="Dinosour"
+          />
+          <div class="content">
+            <h4>Dinosour</h4>
+            <div class="progress-line"><span></span></div>
+            <div class="info">
+              <p>Like<br /><span>&hearts; 10</span></p>
+              <a
+                href="./chrome-dinosaur-game-master/chrome-dinosaur-game-master/dino.html"
+                target="_blank"
+                >Play Now</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Pong game -->
+        <div class="card" data-item="multiple">
+          <img
+            src="https://img.freepik.com/free-vector/people-playing-table-tennis_23-2148662482.jpg?w=2000"
+            alt=""
+          />
+          <div class="content">
+            <h4>Ping Pong</h4>
+            <div class="progress-line"><span></span></div>
+            <div class="info">
+              <p>Like<br /><span>&hearts; 10</span></p>
+              <a href="./pong-master/pong-master/pong.html" target="_blank"
+                >Play Now</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Rock Paper Scissors -->
+        <div class="card" data-item="single">
+          <img
+            src="https://cdn.dribbble.com/users/27981/screenshots/2193123/rock_paper_scissors__2x.png"
+            alt=""
+          />
+          <div class="content">
+            <h4>Rock Paper Scissors</h4>
+            <div class="progress-line"><span></span></div>
+            <div class="info">
+              <p>Like<br /><span>&hearts; 10</span></p>
+              <a
+                href="./Rock-Paper-Scissors-master/Rock-Paper-Scissors-master/rps.html"
+                target="_blank"
+                >Play Now</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Caro -->
+        <div class="card" data-item="multiple">
+          <img
+            src="https://www.gamesver.com/wp-content/uploads/2022/02/Hand-drawn-tic-tac-toe-game.png.webp"
+            alt=""
+          />
+          <div class="content">
+            <h4>Caro</h4>
+            <div class="progress-line"><span></span></div>
+            <div class="info">
+              <p>Like<br /><span>&hearts; 10</span></p>
+              <a
+                href="./Tic-Tac-Toe-master/Tic-Tac-Toe-master/tictactoe.html"
+                target="_blank"
+                >Play Now</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Puzzle -->
+        <div class="card" data-item="single">
+          <img
+            src="https://cdn-amz.woka.io/images/I/51yWHkxB4ML.jpg"
+            alt=""
+            style="object-position: top"
+          />
+          <div class="content">
+            <h4>Puzzle</h4>
+            <div class="progress-line"><span></span></div>
+            <div class="info">
+              <p>Like<br /><span>&hearts; 10</span></p>
+              <a
+                href="./slide-puzzle-master/slide-puzzle-master/puzzle.html"
+                target="_blank"
+                >Play Now</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FeedBacks -->
+    <div class="section-3" id="FeedBacks-part">
+      <h1>What People say About us</h1>
+      <div class="section-3-wrapper">
+        <div class="feedback"></div>
+        <div class="feedback-desc">
+          <p>
+            A well-designed gaming website ensures easy navigation, intuitive
+            menus, and clear categorization, allowing users to quickly find the
+            games or information they are looking for.
+          </p>
+          <br />
+          <i class="far fa-grin-squint-tears"></i><br />
+          <h4>OSCAR</h4>
+        </div>
+        <!-- =========================== -->
+        <div class="feedback f-img-2"></div>
+        <div class="feedback-desc">
+          <p>
+            A successful gaming website offers a wide variety of games to cater
+            to different interests and preferences. Providing a diverse range of
+            options ensures there's something for everyone.
+          </p>
+          <br />
+          <i class="far fa-grin-beam-sweat"></i><br />
+          <h4>MARIO</h4>
+        </div>
+      </div>
+    </div>
+
+    <footer id="contact-part">
+      <div class="footer-body">
+        <div class="logo footer-logo">
+          <i class="fas fa-gamepad"></i>
+          <h1>The Game Zone</h1>
+        </div>
+        <ul>
+          <h3>Short Links</h3>
+          <li><a href="#">Home</a></li>
+          <li><a href="#game-part">Games</a></li>
+          <li><a href="./cart_and_checkout-main/cart.html">Shop</a></li>
+          <li><a href="#FeedBacks-part">FeedBacks</a></li>
+          <li><a href="#contact-part">Contact</a></li>
+        </ul>
+
+        <ul>
+          <h3>All Games</h3>
+          <li>
+            <a
+              href="./chrome-dinosaur-game-master/chrome-dinosaur-game-master/dino.html"
+              >Dinosour</a
+            >
+          </li>
+          <li><a href="./pong-master/pong-master/pong.html">Ping Pong</a></li>
+          <li>
+            <a
+              href="./Rock-Paper-Scissors-master/Rock-Paper-Scissors-master/rps.html"
+              >Rock Paper Scissors</a
+            >
+          </li>
+          <li>
+            <a href="./Tic-Tac-Toe-master/Tic-Tac-Toe-master/tictactoe.html"
+              >Caro</a
+            >
+          </li>
+          <li>
+            <a href="./slide-puzzle-master/slide-puzzle-master/puzzle.html"
+              >Puzzle</a
+            >
+          </li>
+        </ul>
+        <ul>
+          <h3>Get In Touch</h3>
+          <li>
+            <a href="#"><i class="fab fa-facebook"></i>Facebook</a>
+          </li>
+          <li>
+            <a href="#"><i class="fab fa-instagram"></i>Instagram</a>
+          </li>
+          <li>
+            <a href="#"><i class="fab fa-twitter"></i>Twitter</a>
+          </li>
+          <li>
+            <a href="#"><i class="fab fa-linkedin"></i>Linkedin</a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+    <div class="footer-bottom">
+      <p>Copyright &copy; 2023 - All Right Reserved</p>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.7.0.min.js"
+      integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+      crossorigin="anonymous"
+    ></script>
+    <script src="./app.js"></script>
+    <script src="./sign-in.js"></script>
   </body>
 </html>

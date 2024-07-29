@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "Gaming T-shirt",
+    "price": 520,
+    "image": "./images/shop-img-1.jpg"
+  },
+  {
+    "id": 2,
+    "name": "White Gamepad",
+    "price": 220,
+    "image": "./images/shop-img-2.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Gaming Device",
+    "price": 250,
+    "image": "./images/shop-img-3.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Virtual Reality Glasses",
+    "price": 420,
+    "image": "./images/shop-img-4.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Blue Gamepad",
+    "price": 120,
+    "image": "images/controller.jpg"
+  },
+  {
+    "id": 6,
+    "name": "PS4",
+    "price": 120,
+    "image": "images/assassin.jpg"
+  }
+]
