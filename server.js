@@ -30,10 +30,10 @@ servers.forEach((server) => {
   site.use(express.static(path.join(__dirname, "public")));
 
   // Xử lý yêu cầu đến trang chủ
-  site.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "public", server.name, "index.html"));
-    res.send(`Hello from ${server.name}`);
-  });
+  // site.get("/", (req, res) => {
+  //   res.sendFile(path.join(__dirname, "public", server.name, "index.html"));
+  //   res.send(`Hello from ${server.name}`);
+  // });
 
   // Lắng nghe trên cổng tương ứng với từng site
   site.listen(server.port, () => {
