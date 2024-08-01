@@ -1,7 +1,0 @@
-{
-  "servers": [
-    { "name": "site1", "port": 8000 },
-    { "name": "site2", "port": 8001 },
-    { "name": "site3", "port": 8002 }
-  ]
-}
