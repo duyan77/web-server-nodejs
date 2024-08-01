@@ -27,7 +27,7 @@ servers.forEach((server) => {
   const site = express();
 
   // Cấu hình để phục vụ các tệp tĩnh
-  site.use(express.static(path.join(__dirname, "public")));
+  // site.use(express.static(path.join(__dirname, "public")));
 
   // Lắng nghe trên cổng tương ứng với từng site
   site.listen(server.port, () => {
